@@ -1,0 +1,37 @@
+#navlist {
+  position: relative;
+  display: block;
+  list-style: none; }
+
+.first {
+  position: absolute;
+  height: 95px;
+  left: 10px;
+  width: 60px;
+  background: url("spirit.jpg") 0 0; }
+
+.second {
+  position: absolute;
+  height: 95px;
+  left: 80px;
+  width: 60px;
+  background: url("spirit.jpg") -65px 0; }
+
+a:hover {
+  top: 20px; }
+
+main {
+  position: relative; }
+  main p {
+    position: absolute;
+    font-size: 20px;
+    top: 105px;
+    color: red;
+    font-family: "Times New Roman";
+    text-align: left; }
+    main p span {
+      font-size: 30px;
+      color: goldenrod;
+      font-family: Algerian; }
+
+/*# sourceMappingURL=example.css.map */

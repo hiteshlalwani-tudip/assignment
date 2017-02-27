@@ -1,0 +1,74 @@
+.first{
+	width: 80vw;
+	height: 70vh;
+	border-style: solid;
+	position: relative;
+}
+.firsthalf{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 50%;
+}
+.Q1{
+	width: 20vw;
+	height: 20vh;
+	border-style: solid;
+	position: relative;
+	top:3vw;
+	left: 3vw;
+	float: left;
+}
+.Q2{
+	width: 20vw;
+	height: 20vh;
+	border-style: solid;
+	position: relative;
+	top:3vw;
+	left: 70%;
+}
+.firsthalfshapes{
+	width: 3vw;
+	height: 6vh;
+	position: absolute;
+	border-style: solid;
+}
+#circle{
+	position: absolute;
+	top: 25vh;
+	left: 35vw;
+	border-style: solid;
+	border-radius: 50%;
+	width: 10vw;
+	height: 20vh
+}
+.secondhalf{
+	position: absolute;
+	display: block;
+	top: 50%;
+	width: 100%;
+	height: 50%;
+}
+.Q3{
+	width: 20vw;
+	height: 20vh;
+	border-style: solid;
+	position: relative;
+	top:3vw;
+	left: 3vw;
+	float: left;
+}
+.Q4{
+	width: 20vw;
+	height: 20vh;
+	border-style: solid;
+	position: relative;
+	top: 3vw;
+	left: 70%;
+}
+.secondhalfshapes{
+	width: 7vw;
+	height: 6vh;
+	position: absolute;
+	border-style: solid;
+}
