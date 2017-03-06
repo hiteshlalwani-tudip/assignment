@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax example</title>
+</head>
+<body>
+    <button onclick="onld('Empdetails.xml',func)">Get details</button>
+    <button onclick="onld('cd_catalog.xml',func1)">get text</button>
+    <div id="demo"></div>
+    <script>
+            function onld(url,cfunc) {
+                var xhttp= new XMLHttpRequest();
+                xhttp.onreadystatechange=function () {
+                    if(this.readyState==4&&this.status==200){
+                        console.log("in if");
+                        cfunc(this);
+                    }
+                };
+                xhttp.open('get',url,true);
+                xhttp.send();
+            }
+
+            function func(xhttp) {
+                var xmldoc,x,i, text;
+                xmldoc=xhttp.responseXML;
+                console.log(xmldoc);
+                text="";
+                x=xmldoc.getElementsByTagName("name");
+                for(i=0;i<x.length;i++){
+                    console.log(i);
+                    text+=x[i].childNodes[0].nodeValue+"<br />";
+                }
+                console.log(text);
+                document.getElementById('demo').innerHTML=text;
+            }
+
+            function func1(xhttp) {
+                var str=xhttp.responseText;
+                document.getElementById("demo").innerHTML=str;
+            }
+    </script>
+</body>
+</html>

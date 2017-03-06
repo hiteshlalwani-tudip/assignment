@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Like/Dislike Counter</title>
+    <style>
+        #like{
+            width: 35vw;
+            font-size: 150%;
+            font-weight: bold;
+        }
+        #dislike{
+            width: 35vw;
+            font-size: 150%;
+            font-weight: bold;
+        }
+    </style>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        function like() {
+            if(typeof (Storage)!=='undefined'){
+                if (localStorage.likecount) {
+                    localStorage.likecount = Number(localStorage.likecount)+1;
+                } else {
+                    localStorage.likecount = 1;
+                }
+                $('#spanLike').html("Like : "+localStorage.likecount);
+            }
+            else {
+                $('#spanLike').html("Oopppssss..., your browser does not support web storage.");
+            }
+        }
+
+        function dislike() {
+            if(typeof (Storage)!=='undefined'){
+                if (localStorage.dislikecount) {
+                    localStorage.dislikecount = Number(localStorage.dislikecount)+1;
+                } else {
+                    localStorage.dislikecount = 1;
+                }
+                $('#spandislike').html("DisLike : "+localStorage.dislikecount);
+            }
+            else {
+                $('#spandislikeike').html("Oopppssss..., your browser does not support web storage.");
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <div style="width: 70vw;height: 70vh;">
+        <img src="dhoni.jpg" style="width: inherit;height: inherit">
+    </div>
+    <button id="like" onclick="like()">Like</button><button id="dislike" onclick="dislike()">dislike</button><br />
+    <div style="font-weight: bold"><span id="spanLike" style="display:inline-block;width: 35vw"></span><span id="spandislike" style="display:inline-block;width: 35vw"></span></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax and Json</title>
+    <style>
+        table{
+            border-style: solid;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h6>Details of student are</h6>
+    <table id="detailsTable"></table>
+    <script>
+        function loadDetails() {
+            var table="<tr><th>Name</th><th>ID</th><th>Age</th></tr>";
+            var i;
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function () {
+                if(this.readyState==4&&this.status==200) {
+                    var JsonString = xhttp.responseText;
+                    var JsonObj = JSON.parse(JsonString);
+                    for (i = 0; i < JsonObj.student.length; i++) {
+                        table += "<tr><td>" + JsonObj.student[i].name + "</td><td>"
+                            + JsonObj.student[i].ID + "</td><td>"
+                            + JsonObj.student[i].Age + "</td></tr>";
+                    }
+                    document.getElementById("detailsTable").innerHTML = table;
+                }
+            }
+            xhttp.open('get',"Students.json",true);
+            xhttp.send();
+        }
+        loadDetails();
+    </script>
+</body>
+</html>

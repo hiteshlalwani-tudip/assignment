@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Event</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var count=0;
+           $('#text1').keypress(function () {
+               count+=1;
+               $('#text2').val(count);
+           });
+        });
+    </script>
+</head>
+<body>
+    <label for="text1">Enter the Text : </label><input type="text" id="text1"/>
+    <br />
+    <br />
+    <label fro="text2">Count of Key press : </label><input type="text" id="text2" />
+</body>
+</html>

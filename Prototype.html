@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype</title>
+
+</head>
+<body>
+<p>Is the string is Empty :<span id="demo"></span> </p>
+<script>
+    String.prototype.isEmpty=function(){
+        //console.log(this);
+        //console.log(this.toString());
+
+        if (this==" "||this.length==0 || typeof this=="undefined" || this.value==undefined){
+            return true;
+        }
+        else {
+            return false;
+        }}
+    function checkProto() {
+        var str=new String(prompt("Enter the string"));
+        document.getElementById("demo").innerHTML=str.isEmpty();
+    }
+</script>
+<input type="button" onclick="checkProto()" value="button"/>
+
+</body>
+</html>
